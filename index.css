@@ -1,0 +1,63 @@
+.flex-container {
+  display: flex;
+}
+.flex-container > div {
+  width: 46%;
+  margin: 0px 10px;
+}
+.flex-container1 {
+  width: 200px;
+  margin-left: 10px;
+}
+
+.html-form {
+  width: 30%;
+  background: #ffffff;
+  padding: 5px;
+  border: 1px solid #015ba9;
+  height: 400px;
+  margin-left: 400px;
+  margin-top: 50px;
+}
+input[type="submit"] {
+  border: none;
+  background: #015ba9;
+  color: white;
+  padding: 5px 35px;
+  font-size: 20px;
+  position: relative;
+  margin-top: 45px;
+  margin-left: 100px;
+}
+input[type="text"],
+input[type="email"] {
+  width: 210px;
+  height: 20px;
+  background: white;
+  border: 1px solid lightgray;
+  margin: 5px 0px;
+  padding: 5px;
+  margin-top: 20px;
+  margin-left: 50px;
+}
+.html-form h3 {
+  text-align: center;
+  font-size: 25px;
+  margin: 0px;
+  margin-bottom: 5px;
+  color: #015ba9;
+  border-bottom: 1px solid;
+  margin-bottom: 15px;
+  padding-right: 45px;
+}
+#first-name-err,
+#last-name-err,
+#email-err {
+  color: red;
+  font-size: 13px;
+}
+
+.demo {
+  margin-top: 30px;
+  margin-left: 30px;
+}

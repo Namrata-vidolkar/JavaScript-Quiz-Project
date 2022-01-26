@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <img class="logo" src="TK-LOGO_TransBG-1.png" />
+    </div>
+    <div class="html-form">
+      <h3>Registration Page</h3>
+
+      <form action="app.html" method="post" id="registrationForm">
+        <div class="flex-container">
+          <div>
+            <input type="text" id="firstName" placeholder="First Name" />
+            <div id="first-name-err"></div>
+          </div>
+        </div>
+
+        <div class="flex-container1">
+          <input type="text" id="lastName" placeholder="Last Name Name" />
+          <div id="last-name-err"></div>
+        </div>
+
+        <div class="flex-container">
+          <div>
+            <input type="email" id="emailAddress" placeholder="Email Address" />
+            <div id="email-err"></div>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <div class="demo">
+            <label for="select-beast">State: </label>
+            <select id="select-state" placeholder="Pick a state...">
+              <option value="">Select a state...</option>
+              <option value="Andhra Pradesh">Andhra Pradesh</option>
+              <option value="Andaman and Nicobar Islands">
+                Andaman and Nicobar Islands
+              </option>
+              <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+              <option value="Assam">Assam</option>
+              <option value="Bihar">Bihar</option>
+              <option value="Chandigarh">Chandigarh</option>
+              <option value="Chhattisgarh">Chhattisgarh</option>
+              <option value="Dadar and Nagar Haveli">
+                Dadar and Nagar Haveli
+              </option>
+              <option value="Daman and Diu">Daman and Diu</option>
+              <option value="Delhi">Delhi</option>
+              <option value="Lakshadweep">Lakshadweep</option>
+              <option value="Puducherry">Puducherry</option>
+              <option value="Goa">Goa</option>
+              <option value="Gujarat">Gujarat</option>
+              <option value="Haryana">Haryana</option>
+              <option value="Himachal Pradesh">Himachal Pradesh</option>
+              <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+              <option value="Jharkhand">Jharkhand</option>
+              <option value="Karnataka">Karnataka</option>
+              <option value="Kerala">Kerala</option>
+              <option value="Madhya Pradesh">Madhya Pradesh</option>
+              <option value="Maharashtra">Maharashtra</option>
+              <option value="Manipur">Manipur</option>
+              <option value="Meghalaya">Meghalaya</option>
+              <option value="Mizoram">Mizoram</option>
+              <option value="Nagaland">Nagaland</option>
+              <option value="Odisha">Odisha</option>
+              <option value="Punjab">Punjab</option>
+              <option value="Rajasthan">Rajasthan</option>
+              <option value="Sikkim">Sikkim</option>
+              <option value="Tamil Nadu">Tamil Nadu</option>
+              <option value="Telangana">Telangana</option>
+              <option value="Tripura">Tripura</option>
+              <option value="Uttar Pradesh">Uttar Pradesh</option>
+              <option value="Uttarakhand">Uttarakhand</option>
+              <option value="West Bengal">West Bengal</option>
+            </select>
+          </div>
+        </div>
+
+        <input type="submit" />
+      </form>
+
+      <script type="text/javascript">
+        // First Name Validation
+        var firstName = document.getElementById("firstName");
+
+        var firstNameValidation = function () {
+          firstNameValue = firstName.value.trim();
+          validFirstName = /^[A-Za-z]+$/;
+          firstNameErr = document.getElementById("first-name-err");
+
+          if (firstNameValue == "") {
+            firstNameErr.innerHTML = "First Name is required";
+          } else if (!validFirstName.test(firstNameValue)) {
+            firstNameErr.innerHTML =
+              "First Name must be only string without white spaces";
+          } else {
+            firstNameErr.innerHTML = "";
+            return true;
+          }
+        };
+
+        firstName.oninput = function () {
+          firstNameValidation();
+        };
+
+        // Last Name Validation
+        var lastName = document.getElementById("lastName");
+
+        var lastNameValidation = function () {
+          lastNameValue = lastName.value.trim();
+          validLastName = /^[A-Za-z]+$/;
+          lastNameErr = document.getElementById("last-name-err");
+
+          if (lastNameValue == "") {
+            lastNameErr.innerHTML = "Last Name is required";
+          } else if (!validLastName.test(lastNameValue)) {
+            lastNameErr.innerHTML =
+              "Last Name must be only string without white spaces";
+          } else {
+            lastNameErr.innerHTML = "";
+            return true;
+          }
+        };
+
+        lastName.oninput = function () {
+          lastNameValidation();
+        };
+
+        // Email Address Validation
+        var emailAddress = document.getElementById("emailAddress");
+        var emailAddressValidation = function () {
+          emailAddressValue = emailAddress.value.trim();
+          validEmailAddress = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+          emailAddressErr = document.getElementById("email-err");
+
+          if (emailAddressValue == "") {
+            emailAddressErr.innerHTML = "Email Address is required";
+          } else if (!validEmailAddress.test(emailAddressValue)) {
+            emailAddressErr.innerHTML =
+              "Email Addre must be in valid formate with @ symbol";
+          } else {
+            emailAddressErr.innerHTML = "";
+            return true;
+          }
+        };
+
+        emailAddress.oninput = function () {
+          emailAddressValidation();
+        };
+
+        // validation on submit
+
+        document.getElementById("registrationForm").onsubmit = function (e) {
+          firstNameValidation();
+          lastNameValidation();
+          emailAddressValidation();
+
+          if (
+            firstNameValidation() == true &&
+            lastNameValidation() == true &&
+            emailAddressValidation() == true
+          ) {
+            return true;
+          } else {
+            return false;
+          }
+        };
+      </script>
+    </div>
+  </body>
+</html>
